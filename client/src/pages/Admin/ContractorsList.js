@@ -45,7 +45,7 @@ function ContractorsList() {
         getContractorsData();
       }
     } catch (error) {
-      toast.error('Error changing doctor account status');
+      toast.error('Error changing contractor account status');
       dispatch(hideLoading());
     }
   };

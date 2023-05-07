@@ -78,7 +78,7 @@ function App() {
         />
 
         <Route
-          path="/admin/doctorslist"
+          path="/admin/contractorslist"
           element={
             <ProtectedRoute>
               <ContractorsList />

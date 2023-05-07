@@ -29,7 +29,7 @@ const contractorsRoutes = require("./routes/contractorsRoute")
 
 app.use("/api/user", cors(corsOptions), userRoutes);
 app.use("/api/admin", cors(corsOptions), adminRoutes);
-app.use("/api/doctor", cors(corsOptions), contractorsRoutes);
+app.use("/api/contractor", cors(corsOptions), contractorsRoutes);
 
 const port = process.env.PORT || 5000;
 
