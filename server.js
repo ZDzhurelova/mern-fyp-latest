@@ -13,6 +13,11 @@ connection.on("error", (error) => {
   console.log("Error in MongoDB connection", error);
 });
 
+const cors = require('cors');
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 const express = require('express');
 const app = express();
@@ -22,9 +27,9 @@ const userRoutes = require("./routes/userRoute");
 const adminRoutes = require("./routes/adminRoute")
 const contractorsRoutes = require("./routes/contractorsRoute")
 
-app.use("/api/user", userRoutes);
-app.use("/api/admin", adminRoutes);
-app.use("/api/doctor", contractorsRoutes);
+app.use("/api/user", cors(corsOptions), userRoutes);
+app.use("/api/admin", cors(corsOptions), adminRoutes);
+app.use("/api/doctor", cors(corsOptions), contractorsRoutes);
 
 const port = process.env.PORT || 5000;
 

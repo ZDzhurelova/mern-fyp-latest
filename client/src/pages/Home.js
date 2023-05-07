@@ -19,8 +19,6 @@ function Home() {
             });
             dispatch(hideLoading())
 
-            debugger;
-
             if(response.data.success) {
                 setContractors(response.data.data);
             }
